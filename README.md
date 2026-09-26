@@ -2,6 +2,19 @@
 
 Supporting code and materials for an MSc Data Science Extended Research Project at the University of Manchester.
 
+## About the project
+
+Masculinity-focused ("manosphere") communities are often studied through the
+lens of misogyny, but a distinct strand of their discourse casts *men* as the
+victims — of women, feminism, or society — and frames that victimhood within
+conspiratorial narratives. This project develops and validates text classifiers
+to detect three such constructs in YouTube comments — **male grievance /
+victimhood (1A)**, its weaponised escalation into blame and mobilisation
+(**1B**), and **conspiratorial framing (2)** — and then applies them to estimate
+how prevalent this discourse is across manosphere-adjacent creators and three
+comparison communities. The aim is a reproducible, quantitative measure of these
+rhetorical patterns.
+
 This repository documents the procedures used to produce the analysis reported in the ERP. It contains the code and the comment-level data needed to reproduce the reported analysis, so the pipeline runs directly from a clone. Aggregate copies of the principal results are also provided in `reference_results/` for quick comparison.
 
 YouTube is a live platform. Rerunning the collection notebooks will reproduce the collection procedure, but will not recreate the exact historical corpus. The aggregate reference results included here allow reproduced outputs to be compared with the reported findings.
