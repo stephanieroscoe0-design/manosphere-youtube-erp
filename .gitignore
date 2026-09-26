@@ -33,6 +33,7 @@ outputs/rq2/*
 !outputs/rq2/rq2_FINAL_primary_12mo_SCORED.csv
 !outputs/rq2/rq2_final_audit_240_labelled.csv
 !outputs/rq2/rq2_final_audit_240_KEY_DO_NOT_OPEN.csv
+!outputs/rq2/rq2_final_audit_240_MERGED.csv
 
 # ============================================================
 # Models / checkpoints
@@ -56,3 +57,6 @@ Thumbs.db
 
 # Accidental nested clone of this repo — never track
 manosphere-youtube-erp/
+
+# editor backups
+*.bak
