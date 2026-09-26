@@ -1,0 +1,4 @@
+construct,n_test,human_positive_n,predicted_positive_n,tn,fp,fn,tp,precision,recall,f1
+1A,406,126,142,220,60,44,82,0.577,0.651,0.612
+1B,406,39,36,346,21,24,15,0.417,0.385,0.4
+2,406,32,35,363,11,8,24,0.686,0.75,0.716

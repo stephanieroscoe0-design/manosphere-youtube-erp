@@ -1,0 +1,21 @@
+# Core data / ML
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+
+# Text / language
+langdetect
+
+# YouTube Data API v3 collection (notebooks 01, 11)
+google-api-python-client
+httplib2
+python-dotenv
+
+# Transformers (notebooks 09, 10 — GPU recommended)
+torch
+transformers
+datasets
+sentencepiece
+protobuf

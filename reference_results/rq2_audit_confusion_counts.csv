@@ -1,0 +1,10 @@
+scope,construct,weighted_TP,weighted_FP,weighted_FN,weighted_TN
+overall,1A,2498.4,285.6,980.4,18561.6
+overall,1B,451.6,152.4,1025.7,20696.3
+overall,2,217.8,111.2,0.0,21997.0
+manosphere,1A,2416.8,117.2,965.4,3733.6
+manosphere,1B,447.6,104.4,990.9,5690.1
+manosphere,2,182.8,38.2,0.0,7012.0
+comparison,1A,81.6,168.4,15.0,14828.0
+comparison,1B,4.0,48.0,34.8,15006.2
+comparison,2,35.0,73.0,0.0,14985.0

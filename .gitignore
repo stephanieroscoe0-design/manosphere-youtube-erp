@@ -1,0 +1,24 @@
+# Secrets
+.env
+
+# Comment-level data and analytical outputs — NOT published.
+# Reproduction assumes access to the original source data (per ERP guidance).
+# Aggregate reference results are provided in reference_results/ instead.
+data/
+outputs/
+
+# Trained models / checkpoints
+final_models/
+final_training_runs/
+*.pt
+*.bin
+*.safetensors
+
+# Python / Jupyter / OS
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,13 @@
+construct,community,prevalence_percent,ci_low_percent,ci_high_percent
+1A,manosphere_adjacent,30.763,19.753,39.288
+1A,male_oriented_wellbeing,7.195,1.283,15.131
+1A,mainstream_self_improvement,1.508,0.509,3.246
+1A,unrelated_control,0.158,0.0,0.566
+1B,manosphere_adjacent,6.852,4.416,9.199
+1B,male_oriented_wellbeing,2.132,0.147,5.095
+1B,mainstream_self_improvement,0.297,0.048,0.849
+1B,unrelated_control,0.125,0.0,0.5
+2,manosphere_adjacent,4.04,1.64,6.848
+2,male_oriented_wellbeing,0.53,0.0,1.444
+2,mainstream_self_improvement,1.521,0.667,2.855
+2,unrelated_control,0.137,0.0,0.393
