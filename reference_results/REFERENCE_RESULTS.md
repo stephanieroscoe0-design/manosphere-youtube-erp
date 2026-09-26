@@ -19,6 +19,7 @@ hardware and software environments.
 | `rq2_permutation_pairwise.csv` | Pairwise permutation differences with exact and Holm-adjusted p-values | 13 |
 | `rq2_audit_metrics.csv` | Sampling-weighted audit precision / recall / F1 with intervals (overall, manosphere, comparison) | 15 |
 | `rq2_audit_confusion_counts.csv` | Weighted TP / FP / FN / TN behind the audit metrics | 15 |
+| `inter_annotator_agreement.csv` | Reliability: raw agreement, Cohen's κ, positive/negative agreement | 16 |
 
 ## Headline figures
 
@@ -54,6 +55,12 @@ hardware and software environments.
 | 1B | 0.450 | 0.088 |
 | 2  | 0.905 | 0.490 |
 
-Inter-annotator agreement statistics (raw agreement, Cohen's κ, positive/negative
-agreement, exact three-label agreement) are reported in the ERP and produced by
-notebook 16.
+**Inter-annotator agreement — reliability (n = 341)**
+
+| Construct | Raw agreement | Cohen's κ |
+|-----------|:-------------:|:---------:|
+| 1A | 0.859 | 0.705 |
+| 1B | 0.909 | 0.685 |
+| 2  | 0.924 | 0.628 |
+
+Exact three-label agreement was 76.8%. Full figures: `inter_annotator_agreement.csv`.

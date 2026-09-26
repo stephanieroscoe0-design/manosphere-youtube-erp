@@ -327,7 +327,7 @@ values are also provided in `reference_results/` for direct comparison.
 |-------------|:--------:|----------------|
 | Table 1 — comments per channel (RQ1) | 02 | (printed corpus counts) |
 | Table 2 — final cross-community corpus | 11–12 | (printed corpus counts) |
-| Table 3 — inter-annotator agreement | 16 | — |
+| Table 3 — inter-annotator agreement | 16 | `inter_annotator_agreement.csv` |
 | Table 4 — baseline model performance | 08 | `cv_baseline_metrics.csv` |
 | Table 5 — transformer validation performance | 09 | — |
 | Table 6 — final held-out test performance | 10 | `rq1_final_test_metrics.csv` |

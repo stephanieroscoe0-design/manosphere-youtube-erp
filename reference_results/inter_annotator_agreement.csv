@@ -1,0 +1,4 @@
+label,n,raw_agreement,cohens_kappa,positive_agreement,negative_agreement
+1A,341,0.859,0.705,0.815,0.886
+1B,341,0.909,0.685,0.739,0.945
+2,341,0.924,0.628,0.667,0.957
