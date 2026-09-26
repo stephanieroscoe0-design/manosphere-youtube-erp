@@ -1,0 +1,10 @@
+construct,comparison,difference_pp,ci_low_pp,ci_high_pp
+1A,manosphere_adjacent - male_oriented_wellbeing,23.568078681778474,10.40581033684905,34.810994015423
+1A,manosphere_adjacent - mainstream_self_improvement,29.254861551956868,18.27033334276476,37.900860936901246
+1A,manosphere_adjacent - unrelated_control,30.605403889177303,19.632608808533135,39.12448300009269
+1B,manosphere_adjacent - male_oriented_wellbeing,4.720676687317965,0.8988043251012187,7.934431921035391
+1B,manosphere_adjacent - mainstream_self_improvement,6.55532476343566,4.083403086020572,8.950557554329222
+1B,manosphere_adjacent - unrelated_control,6.727245237427157,4.287702664577538,9.106995089570932
+2,manosphere_adjacent - male_oriented_wellbeing,3.5101980717770163,0.9597089672959364,6.427509214893245
+2,manosphere_adjacent - mainstream_self_improvement,2.5189139091589627,-0.19512234069531859,5.514273424064318
+2,manosphere_adjacent - unrelated_control,3.903122995989698,1.5214881803417022,6.714344721972074

@@ -2,7 +2,7 @@
 
 Supporting code and materials for an MSc Data Science Extended Research Project at the University of Manchester.
 
-This repository documents the procedures used to produce the analysis reported in the ERP. It contains the collection, preprocessing, modelling and analysis code. Comment-level source data are **not** published here; in accordance with the ERP guidance, reproduction assumes access to the original source data (see §6). Non-identifiable aggregate copies of the principal results are provided in `reference_results/` for comparison.
+This repository documents the procedures used to produce the analysis reported in the ERP. It contains the code and the comment-level data needed to reproduce the reported analysis, so the pipeline runs directly from a clone. Aggregate copies of the principal results are also provided in `reference_results/` for quick comparison.
 
 YouTube is a live platform. Rerunning the collection notebooks will reproduce the collection procedure, but will not recreate the exact historical corpus. The aggregate reference results included here allow reproduced outputs to be compared with the reported findings.
 
@@ -49,7 +49,13 @@ The research has two parts:
 │   ├── 14_RQ2_blind_audit.ipynb
 │   ├── 15_RQ2_audit_analysis.ipynb
 │   ├── 16_inter_annotator_agreement.ipynb
+│   ├── EDA.ipynb
 │   └── lexicon_rules.py
+├── data/
+│   └── processed/            # labelled corpus, splits, baseline metrics
+├── outputs/
+│   ├── rq1/                  # held-out test predictions and metrics
+│   └── rq2/                  # scored corpus, prevalence, audit
 └── reference_results/
     ├── REFERENCE_RESULTS.md
     ├── cv_baseline_metrics.csv
@@ -62,7 +68,7 @@ The research has two parts:
     └── rq2_audit_confusion_counts.csv
 ```
 
-Comment-level data, analytical outputs and trained model weights are not included in this public repository (see §6). The `.env` key and these directories are excluded via `.gitignore`. The `reference_results/` directory holds non-identifiable aggregate copies of the principal results for comparison.
+The repository includes the data and outputs needed to reproduce the analysis. Only the API key (`.env`), the large raw harvest and full cleaned corpus (`data/raw/`, `data/processed/comments_clean.csv` — regenerable by notebooks 01/02/11), and the trained model weights (`final_models/`, `final_training_runs/` — rebuilt by 09/10) are excluded via `.gitignore`. The `reference_results/` directory holds aggregate copies of the principal results for quick comparison.
 
 ---
 
@@ -150,7 +156,7 @@ Then run:
 !pip install -r ../requirements.txt
 ```
 
-Notebooks 09 and 10 require the RQ1 source data (the training/validation splits and the frozen held-out predictions), which are not published in this repository (see §6). Place them under `data/processed/` and `outputs/rq1/` before running. The notebooks resolve their paths relative to the repository root and use the same directory structure in VS Code and Colab.
+The training/validation splits and the frozen held-out predictions used by notebooks 09 and 10 are included in the repository, so no extra files are needed after cloning. The notebooks resolve their paths relative to the repository root and use the same directory structure in VS Code and Colab.
 
 Notebook 09 performs transformer model-selection experiments. Notebook 10 builds the selected classifiers and analyses the frozen held-out prediction file. The frozen held-out prediction file is part of the source data; exact predictions can vary slightly when the models are retrained on different hardware.
 
@@ -158,26 +164,28 @@ Notebook 09 performs transformer model-selection experiments. Notebook 10 builds
 
 ## 6. Data availability
 
-Comment-level source data are not included in this public repository because
-they contain identifiable user-generated content. In accordance with the ERP
-guidance, reproduction assumes access to the original source data.
+The comment-level data needed to reproduce the reported analysis are **included**
+in this repository. They are publicly posted YouTube comments retrieved via the
+YouTube Data API v3; the collection procedure, channel list and all parameters
+are documented in notebooks 01 (RQ1) and 11 (RQ2).
 
-Notebooks 01 and 11 document the YouTube API collection procedures, while the
-remaining notebooks document preprocessing, sampling, model development,
-evaluation and statistical analysis.
-
-The `reference_results/` directory contains non-identifiable aggregate copies
-of the principal results reported in the ERP. These allow reproduced outputs
-to be compared with the submitted findings.
+Two large, regenerable files are excluded for size: the raw harvest (`data/raw/`)
+and the full cleaned corpus (`data/processed/comments_clean.csv`, which also
+exceeds GitHub's file-size limit). Both are rebuilt by notebooks 01, 02 and 11.
+Reproduction of the reported results begins from the frozen labelled corpus and
+the fixed splits, which are included, so the pipeline runs directly from a clone.
+Trained model weights are excluded (rebuilt by notebooks 09 and 10 on a GPU), and
+the API key (`.env`) is never committed.
 
 YouTube is a live platform. A new API collection will reproduce the collection
-procedure but will not recreate the exact historical corpus.
+procedure but will not recreate the exact historical corpus; the frozen copies
+used in the reported analysis are included for exact verification.
 
 ## 7. Analysis workflow
 
 The notebooks are numbered according to the research workflow. However, the workflow includes manual annotation and frozen-prediction stages, so it is not a single completely automated pipeline.
 
-A reader reproducing the reported analysis uses the completed annotation, prediction and audit files from the source data (see §6).
+A reader reproducing the reported analysis uses the completed annotation, prediction and audit files included in the repository (see §6).
 
 |  # | Notebook | Purpose |
 | -: | -------- | ------- |
@@ -295,6 +303,29 @@ Notebook 15 uses 10,000 bootstrap resamples with seed 42 for the weighted transf
 
 ## 9. Principal inputs and outputs
 
+`EDA.ipynb` is a standalone descriptive overview (class balance, comments per channel, comment length, and RQ2 community composition) that runs from the included data and reproduces the corpus descriptives reported in the ERP.
+
+### Report tables and figures
+
+Each table and figure in the ERP is produced by the notebook below. Aggregate
+values are also provided in `reference_results/` for direct comparison.
+
+| Report item | Notebook | Reference file |
+|-------------|:--------:|----------------|
+| Table 1 — comments per channel (RQ1) | 02 | (printed corpus counts) |
+| Table 2 — final cross-community corpus | 11–12 | (printed corpus counts) |
+| Table 3 — inter-annotator agreement | 16 | — |
+| Table 4 — baseline model performance | 08 | `cv_baseline_metrics.csv` |
+| Table 5 — transformer validation performance | 09 | — |
+| Table 6 — final held-out test performance | 10 | `rq1_final_test_metrics.csv` |
+| Table 7 — transfer-audit counts by community and construct | 15 | `rq2_audit_confusion_counts.csv` |
+| Figure 1 — baseline and transformer F1-scores | 08–09 | `cv_baseline_metrics.csv` |
+| Figure 2 — model-detected prevalence per community | 13 | `rq2_community_prevalence.csv` |
+
+Class balance of the labelled corpus (1A 31.0%, 1B 9.7%, construct 2 8.0%) is
+produced by notebook 04.
+
+
 The notebooks read the source data and write their outputs locally under `data/` and `outputs/` (not published; see §6). Non-identifiable aggregate copies of the principal results are provided in `reference_results/`.
 
 ### Baseline results
@@ -380,8 +411,8 @@ outputs/rq2/audit_confusion_table.csv
 
 * Random seeds are declared in the relevant notebooks. Seed 42 is used for the principal sampling, splitting, final model and RQ2 resampling procedures. Seeds 42, 1 and 2 are used for transformer stability checks.
 * The frozen train, validation and test files preserve the divisions used in the ERP.
-* The RQ1 held-out analysis uses the frozen test probabilities from the source data.
-* The RQ2 prevalence analysis uses the frozen scored corpus from the source data.
+* The RQ1 held-out analysis uses the included frozen test probabilities.
+* The RQ2 prevalence analysis uses the included frozen scored corpus.
 * Rebuilding the transformer models may produce small differences across hardware and software environments.
 * New YouTube API collection will differ from the historical corpus because the platform changes over time.
 * The aggregate reference results in `reference_results/` provide the reference figures from the submitted report.

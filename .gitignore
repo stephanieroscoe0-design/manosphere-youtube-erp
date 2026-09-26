@@ -1,13 +1,13 @@
-# Secrets
+# Secrets — never commit the API key
 .env
 
-# Comment-level data and analytical outputs — NOT published.
-# Reproduction assumes access to the original source data (per ERP guidance).
-# Aggregate reference results are provided in reference_results/ instead.
-data/
-outputs/
+# Large / regenerable corpora — excluded for size (rebuilt by 01/02/11).
+# Reproduction of the reported results starts from the frozen labelled corpus
+# and splits, which ARE included.
+data/raw/
+data/processed/comments_clean.csv
 
-# Trained models / checkpoints
+# Trained models / checkpoints — too large; rebuilt by 09/10
 final_models/
 final_training_runs/
 *.pt
