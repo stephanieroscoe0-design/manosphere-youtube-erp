@@ -200,6 +200,19 @@ The notebooks are numbered according to the research workflow. However, the work
 
 A reader reproducing the reported analysis uses the completed annotation, prediction and audit files included in the repository (see §6).
 
+### Which notebooks run from a fresh clone?
+
+Reproduction of the reported results runs entirely from the included labelled data, fixed splits, frozen predictions and scored corpus (see §6) — **no fresh scrape, GPU, or large raw files are required.** In practice:
+
+| Notebooks | Runs from a clone? | Requirement |
+| --- | --- | --- |
+| **04, 05, 06, 07, 08, 13, 14, 15, 16, `EDA`** | **Yes — no setup** | None. Run directly on the included data; this reproduces every reported result. |
+| 01, 11 | Only for a fresh scrape | A YouTube Data API v3 key (§4). Not needed to reproduce the results. |
+| 09, 10 | Needs a GPU | Run on Google Colab with a T4 GPU (§5). Notebook 10's reported metrics also read the included frozen predictions. |
+| 02, 03 | No | Require the raw / cleaned corpus (`data/raw/`, `data/processed/comments_clean.csv`), which is excluded for size and YouTube's terms. They document the collection-to-cleaning steps; their downstream inputs are already included, so reproduction proceeds from notebook 04. |
+
+To reproduce the analysis: run **notebook 04** (rebuilds the fixed splits from the included labelled corpus), then **05–08** (RQ1 baselines), **13–16** (RQ2), and **`EDA`** — in any order after 04, since each reads only committed files.
+
 |  # | Notebook | Purpose |
 | -: | -------- | ------- |
 | 01 | `01_collect_comments.ipynb` | Collects the RQ1 corpus from 10 selected channels using the YouTube Data API |
